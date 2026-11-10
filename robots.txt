@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://princeenyogroupofcompany-cpu.github.io/PRINSOW-ENTERPRISE-/sitemap.xml
