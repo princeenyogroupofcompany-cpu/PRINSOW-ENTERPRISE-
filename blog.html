@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Practical DIY guides, electrical and home safety tips, technology articles and useful knowledge from P.E Enterprise Ghana.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://princeenyogroupofcompany-cpu.github.io/PRINSOW-ENTERPRISE-/blog.html">
+<meta name="theme-color" content="#09265b">
+<title>P.E Enterprise Blog | Tips, Technology & Safety</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--navy:#09265b;--blue:#1253a4;--gold:#f5bd19;--ink:#14213d;--muted:#627089;--pale:#f4f7fc}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.65}
+a{color:inherit;text-decoration:none}.top{background:var(--navy);color:white;padding:9px 6%;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.9rem}
+header{padding:13px 6%;display:flex;justify-content:space-between;align-items:center;gap:18px;box-shadow:0 3px 16px #061b4214;position:sticky;top:0;background:white;z-index:4}
+.brand{display:flex;align-items:center;gap:12px;color:var(--navy);font-weight:800}.brand img{width:58px;height:58px;object-fit:contain}.brand small{display:block;color:#9b7210}
+nav{display:flex;gap:17px;flex-wrap:wrap;font-weight:700}nav a:hover{color:#a87900}
+.hero{padding:55px 6%;background:linear-gradient(110deg,#071d49,#104b91);color:white}.hero small{color:var(--gold);font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:12px 0}.hero p{max-width:720px;color:#e4edf9}
+main{max-width:1160px;margin:auto;padding:35px 5%}.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}.tools input,.tools select,.field{font:inherit;padding:12px;border:1px solid #ccd5e3;border-radius:9px;background:white}.tools input{flex:1;min-width:200px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.article{border:1px solid #e3e9f2;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px #09265b0c}.stripe{height:9px;background:linear-gradient(90deg,var(--navy),var(--gold))}.inside{padding:20px}.tag{display:inline-block;background:#eef3fb;color:var(--blue);padding:4px 10px;border-radius:20px;font-size:.78rem;font-weight:800}.article h2{font-size:1.2rem;line-height:1.35;color:var(--navy);margin:12px 0 8px}.article p{color:var(--muted)}.meta{font-size:.83rem;color:#718096}.read{color:var(--blue);font-weight:800}
+.notice{padding:18px;background:var(--pale);border-radius:12px;text-align:center;color:var(--muted)}
+.reader{max-width:820px;margin:auto}.reader h1{font-size:clamp(2rem,5vw,3rem);line-height:1.2;color:var(--navy)}.body-copy{white-space:pre-wrap;font-size:1.06rem;line-height:1.85}.reader-actions{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-block;padding:11px 18px;border:0;border-radius:25px;background:var(--gold);font-weight:800;cursor:pointer;color:#15213a}.blue{background:var(--navy);color:white}.green{background:#16b85a;color:white}
+.admin{margin:50px auto 10px;padding:24px;background:var(--pale);border-radius:16px;max-width:850px}.admin h2{color:var(--navy);margin-top:0}.panel{display:none;background:white;padding:18px;border-radius:12px}.field{display:block;width:100%;margin:7px 0 14px}.admin textarea{min-height:190px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.status{min-height:24px;color:var(--blue);font-size:.92rem}.admin-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #e5eaf2}.admin-item button{margin:3px}
+footer{background:#061a40;color:#d9e4f5;padding:27px 6%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}footer strong{color:white}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){header{align-items:flex-start;flex-direction:column}nav{gap:12px}.grid,.row{grid-template-columns:1fr}.hero{padding:42px 6%}}
+</style>
+</head>
+<body>
+<div class="top"><span>📍 Western Region, Ghana</span><span>Professional technical services nationwide</span><span>Call / WhatsApp: 0598005107</span></div>
+<header>
+<a class="brand" href="./"><img src="prinsowenyo-logo.jpg" alt="P.E Enterprise logo"><span>PRINSOWENYO ENTERPRISE<small>Innovative Technical Solutions</small></span></a>
+<nav><a href="./">Home</a><a href="./#services">Services</a><a href="./#gallery">Gallery</a><a href="blog.html">Blog</a><a href="./#contact">Contact</a></nav>
+</header>
+<section class="hero"><small>KNOWLEDGE • SAFETY • TECHNOLOGY</small><h1>The P.E Enterprise Blog</h1><p>Practical DIY guidance, electrical and home safety education, security advice, technology updates, stories and useful general knowledge.</p><a class="btn" href="./">Visit our main website</a></section>
+<main>
+<div id="listing">
+<div class="tools"><input id="search" type="search" placeholder="Search articles…"><select id="category"><option value="">All categories</option><option>DIY & How-to</option><option>Electrical & Home Safety</option><option>Technology</option><option>Home & Security</option><option>Education & General Knowledge</option><option>Stories</option></select></div>
+<div id="articleGrid" class="grid"></div><p id="listingStatus" class="notice">Loading articles…</p>
+</div>
+<div id="reader" class="reader" hidden></div>
+<section class="admin">
+<h2>Administrator area</h2><p>Sign in using the same administrator email and password used for the project gallery. Do not share your password.</p>
+<button class="btn blue" id="loginToggle">Administrator login</button><button class="btn blue" id="logout" style="display:none">Log out</button>
+<div class="panel" id="panel">
+<form id="loginForm"><label>Email<input class="field" id="email" type="email" autocomplete="username" required></label><label>Password<input class="field" id="password" type="password" autocomplete="current-password" required></label><button class="btn blue">Sign in</button></form>
+<div id="editor" hidden>
+<h3 id="editorHeading">Write an article</h3>
+<form id="articleForm"><input type="hidden" id="articleId">
+<label>Title<input class="field" id="title" maxlength="180" required></label>
+<div class="row"><label>Category<select class="field" id="articleCategory"><option>DIY & How-to</option><option>Electrical & Home Safety</option><option>Technology</option><option>Home & Security</option><option>Education & General Knowledge</option><option>Stories</option></select></label><label>Author<input class="field" id="author" value="P.E Enterprise" maxlength="80"></label></div>
+<label>Short summary<textarea class="field" id="excerpt" rows="3" maxlength="400" required></textarea></label>
+<label>Article content<textarea class="field" id="content" required placeholder="Write your article here. Separate paragraphs with a blank line."></textarea></label>
+<div class="reader-actions"><button class="btn blue" type="submit">Publish article</button><button class="btn" type="button" id="draft">Save as draft</button><button class="btn" type="button" id="newArticle">New article</button></div></form>
+<h3>Your articles</h3><div id="adminList"></div>
+</div></div><p class="status" id="adminStatus" role="status" aria-live="polite"></p>
+</section>
+</main>
+<footer><div><strong>PRINSOWENYO ENTERPRISE</strong><br>Innovative Technical Solutions</div><div>Western Region, Ghana • Nationwide service</div><div>Call / WhatsApp: 0598005107</div></footer>
+<script>
+const SUPABASE_URL="https://vvgqacoxkmbkjyhyodjm.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_Jiq0pz9rJ_V6NOmmDlzwqw_OJ4qPeJl";
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const $=id=>document.getElementById(id);let articles=[];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const slugify=s=>s.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,90);
+const date=s=>s?new Date(s).toLocaleDateString():"";
+const msg=s=>$("adminStatus").textContent=s;
+function openArticle(a){
+ $("listing").hidden=true;$("reader").hidden=false;
+ $("reader").innerHTML='<a class="read" href="blog.html">← Back to articles</a><p class="meta">'+esc(a.category)+' · '+esc(a.author||"P.E Enterprise")+' · '+date(a.published_at||a.created_at)+'</p><h1>'+esc(a.title)+'</h1><p><strong>'+esc(a.excerpt)+'</strong></p><div class="body-copy"></div><div class="reader-actions"><button class="btn blue" id="share">Share article</button><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/233598005107">Contact P.E Enterprise</a></div>';
+ a.body.split(/\n\s*\n/).forEach(p=>{const el=document.createElement("p");el.textContent=p;$("reader").querySelector(".body-copy").append(el)});
+ $("share").onclick=async()=>{const url=location.href;if(navigator.share){try{await navigator.share({title:a.title,url})}catch(e){}}else{try{await navigator.clipboard.writeText(url);alert("Link copied.")}catch(e){prompt("Copy this link:",url)}}};
+}
+async function loadPublic(){
+ const {data,error}=await db.from("articles").select("id,title,slug,category,excerpt,body,author,created_at,published_at").eq("status","published").order("published_at",{ascending:false});
+ if(error){$("listingStatus").textContent="Articles are not connected yet. Please complete the Supabase setup.";return}
+ articles=data||[];render();
+ const slug=new URLSearchParams(location.search).get("article");if(slug){const found=articles.find(a=>a.slug===slug);if(found)openArticle(found);else $("listingStatus").textContent="This article is unavailable or not published."}
+}
+function render(){
+ const q=$("search").value.toLowerCase().trim(),cat=$("category").value;
+ const filtered=articles.filter(a=>(!cat||a.category===cat)&&(!q||[a.title,a.excerpt,a.body,a.category].join(" ").toLowerCase().includes(q)));
+ $("articleGrid").innerHTML="";
+ filtered.forEach(a=>{const card=document.createElement("article");card.className="article";card.innerHTML='<div class="stripe"></div><div class="inside"><span class="tag">'+esc(a.category)+'</span><h2>'+esc(a.title)+'</h2><div class="meta">'+date(a.published_at)+' · '+esc(a.author||"P.E Enterprise")+'</div><p>'+esc(a.excerpt)+'</p><a class="read" href="blog.html?article='+encodeURIComponent(a.slug)+'">Read article →</a></div>';$("articleGrid").append(card)});
+ $("listingStatus").hidden=filtered.length>0;$("listingStatus").textContent=filtered.length?filtered.length+" article(s) found.":(articles.length?"No articles match your search.":"No articles published yet. Please check back soon.");
+}
+$("search").oninput=render;$("category").onchange=render;
+$("loginToggle").onclick=()=>$("panel").style.display=$("panel").style.display==="block"?"none":"block";
+$("loginForm").onsubmit=async e=>{e.preventDefault();msg("Signing in…");const {error}=await db.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});if(error){msg("Sign-in failed: "+error.message);return}$("loginForm").reset();msg("Signed in.");};
+$("logout").onclick=async()=>{const {error}=await db.auth.signOut();msg(error?"Sign-out failed: "+error.message:"You have signed out.");};
+function clearForm(){$("articleForm").reset();$("articleId").value="";$("author").value="P.E Enterprise";$("editorHeading").textContent="Write an article"}
+$("newArticle").onclick=clearForm;
+async function save(status){
+ const title=$("title").value.trim(),excerpt=$("excerpt").value.trim(),body=$("content").value.trim();if(!title||!excerpt||!body){msg("Please complete the title, summary and content.");return}
+ const id=$("articleId").value;const payload={title,slug:slugify(title),category:$("articleCategory").value,excerpt,body,author:$("author").value.trim()||"P.E Enterprise",status,published_at:status==="published"?new Date().toISOString():null};
+ msg("Saving…");const result=id?await db.from("articles").update(payload).eq("id",id):await db.from("articles").insert(payload);
+ if(result.error){msg("Save failed: "+result.error.message);return}msg(status==="published"?"Article published.":"Draft saved.");clearForm();await loadAdmin();await loadPublic();
+}
+$("articleForm").onsubmit=e=>{e.preventDefault();save("published")};$("draft").onclick=()=>save("draft");
+async function loadAdmin(){
+ const {data,error}=await db.from("articles").select("*").order("created_at",{ascending:false});if(error){$("adminList").textContent=error.message;return}
+ $("adminList").innerHTML="";
+ (data||[]).forEach(a=>{const row=document.createElement("div");row.className="admin-item";const label=document.createElement("span");label.textContent=a.title+" — "+a.status;const actions=document.createElement("span");const edit=document.createElement("button");edit.className="btn";edit.textContent="Edit";edit.onclick=()=>{$("articleId").value=a.id;$("title").value=a.title;$("articleCategory").value=a.category;$("author").value=a.author||"P.E Enterprise";$("excerpt").value=a.excerpt;$("content").value=a.body;$("editorHeading").textContent="Edit article";window.scrollTo({top:$("panel").offsetTop,behavior:"smooth"})};const del=document.createElement("button");del.className="btn";del.textContent="Delete";del.onclick=async()=>{if(!confirm("Permanently delete this article?"))return;const {error}=await db.from("articles").delete().eq("id",a.id);msg(error?"Delete failed: "+error.message:"Article deleted.");if(!error){await loadAdmin();await loadPublic()}};actions.append(edit,del);row.append(label,actions);$("adminList").append(row)});
+}
+async function sessionUI(){const {data}=await db.auth.getSession();const yes=!!data.session;$("loginToggle").style.display=yes?"none":"inline-block";$("logout").style.display=yes?"inline-block":"none";$("loginForm").hidden=yes;$("editor").hidden=!yes;if(yes)await loadAdmin()}
+db.auth.onAuthStateChange(()=>setTimeout(sessionUI,0));
+(async()=>{await loadPublic();await sessionUI()})();
+</script>
+</body>
+</html>
